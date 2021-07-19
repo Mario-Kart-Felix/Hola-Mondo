@@ -1,0 +1,12 @@
+# Hola-Mondo
+am using link to generate deep linking. I am using their public API's endpoint to generate links.
+
+Here is their endpoint: https://api.branch.io/v1/url
+
+I append my branch key and data that I need to associate in this link. Everything is working fine but I need to expire this link within one hour.
+
+Reading up here: https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url
+
+I added "duration" key also, but it didnt expire the link.
+
+It will be great if anyone could help me in figuring out how to expire branch.io link.
