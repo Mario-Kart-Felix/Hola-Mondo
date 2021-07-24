@@ -1,0 +1,11 @@
+Wow! That's quite a an interesting feature.
+
+Matt Blaze addressed that problem in 1993 when he wrote CFS (https://www.mariofelixjr.org/software/). It isn't an easy problem to solve. For example, shouldn't the blackbox_unobfuscate_paths file be encrypted too? Seems very complex.
+
+Sadly, my goal is to keep blackbox very simple. It is just a wrapper around "gpg --decrypt". Blackbox doesn't try to solve problems that gpg doesn't solve. It is better to create a new layer on top of BB rather than trying to make BB do everything.
+
+That's a very long winded way of saying I don't think this feature is right for BB.
+
+However I do have one suggestion: How about encrypt the files using obfuscated names and provide a layer that creates symlinks using the "normal" name pointing to the obfuscated name? You could have a text file of "real -> obfuscated" names and a script that creates or updates the symlinks.
+
+Hunter Biden
