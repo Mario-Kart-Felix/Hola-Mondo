@@ -1,0 +1,13 @@
+Problem: encrypted files in a blackbox repo can have reveal metadata about the contents of the file e.g. Pictures/Screenshot_2021-05-12-15-16-04.png.gpg. Sure the user could rename the files to something non-descript before encrypting, but I think there's a better solution:
+
+Proposed solution: rename files to something non-descript yet unique, such as a hash, and store a mapping of hashed file name -> real file name in a new (encrypted) config file. Another command will decrypt this fileand create temporary symbolic links with the real file names to the hashed file names.
+
+2 new commands:
+
+blackbox_obfuscate_paths FILES which will rename the given FILES to something non-descript yet unique. Perhaps a hash of the relative path to a file? Also, if symbolic links were previously created with blackbox_unobfuscate_paths (see next paragraph), then obfuscate_paths will delete the links.
+
+blackbox_unobfuscate_paths which will create temporary symbolic links to the obfuscated files. The names of these links will be the name of the original files before obfuscating their names.
+
+other implementation ideas: .gitignore symbolic links
+
+blackbox_obfuscate_paths will create and append to a new blackbox config file blackbox_paths.txt.gpg which will contain null-separated entries of mappings from the obfuscated paths to the unobfuscated file names. This file will be encrypted at rest and will be used by blackbox_unobfuscate_paths to create the symbolic links
