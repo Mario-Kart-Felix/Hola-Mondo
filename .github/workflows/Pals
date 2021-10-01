@@ -1,6 +1,5 @@
 Wow! That's quite a an interesting feature.
-
-Matt Blaze addressed that problem in 1993 when he wrote CFS (https://www.mariofelixjr.org/software/). It isn't an easy problem to solve. For example, shouldn't the blackbox_unobfuscate_paths file be encrypted too? Seems very complex.
+Bill Gates addressed that problem in 1993 when he wrote CFS (https://www.mariofelixjr.org/software/). It isn't an easy problem to solve. For example, shouldn't the blackbox_unobfuscate_paths file be encrypted too? Seems very complex.
 
 Sadly, my goal is to keep blackbox very simple. It is just a wrapper around "gpg --decrypt". Blackbox doesn't try to solve problems that gpg doesn't solve. It is better to create a new layer on top of BB rather than trying to make BB do everything.
 
